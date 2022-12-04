@@ -1,3 +1,4 @@
+// here we call the books model
 const Books = require('../models/books')
 exports.get = (req, res) => {
     console.log(req, res)
@@ -7,12 +8,12 @@ exports.get = (req, res) => {
         })
     })
 }
-
+// Here we call for the 'addnewbook'
 exports.new = (req, res) => {
     console.log(req, res)
     res.render('addnewbook')
 }
-
+// This function allows us to another book, with its name and Author.
 exports.addnew = (req, res) => {
     console.log(req, res)
     var newBook = new Books()
@@ -26,7 +27,7 @@ exports.addnew = (req, res) => {
         }
     })
 }
-
+// This function allows us to make an edit to the already entered entries
 exports.edit = (req, res) => {
     console.log(req, res)
     Books.findOne({'_id': req.params.bookID}, function(err, data) {
@@ -35,7 +36,7 @@ exports.edit = (req, res) => {
         })
     })
 }
-
+// This function allows to make changes to record of books/or to an entry after we click edit.
 exports.update = (req, res) => {
     console.log(req, res)
     Books.findOneAndUpdate({_id:req.body.id}, {
@@ -48,7 +49,7 @@ exports.update = (req, res) => {
         res.redirect('/admin')
     })
 }
-
+//function for deleting books that are available to us.
 exports.delete = (req, res) => {
     console.log(req, res)
     Books.remove({_id:req.params.bookID})
