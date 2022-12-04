@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <title>Edit - <%= book.name %> </title>
+<head>
+    <!--Below in styles I define my settings for the navgation panel, which is margined to the left side of the screen and has a black background with
+  with white colored text-->
+  <link rel="stylesheet" href="/css/style.css">
+<!--Below are the links for the navigation panel leading to different pages-->
+</head>
+<body>   
+    <%- include('navigation') %>
+        <!--below I have the book image and text and styles-->
+    <div style="margin-left:20%;padding:1px 16px;height:1000px;">
+        <div class="book_edit">
+            <form method="post" action="/update">
+                <input type="text" readonly name="id" value="<%= book._id %>" style="background: #b5b5b5">
+                <input type="text" name="name" value="<%= book.name %> ">
+                <input type="text" name="author_name" value="<%= book.author_name %> ">
+                <input type="submit" value="Update" name="submit">
+            </form>
+        </div>
+        </div>
+    </body>
+</html>

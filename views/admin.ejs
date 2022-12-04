@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <title>Admin</title>
+<head>
+    <!--Below in styles I define my settings for the navgation panel, which is margined to the left side of the screen and has a black background with
+  with white colored text-->
+  <link rel="stylesheet" href="/css/style.css">
+<!--Below are the links for the navigation panel leading to different pages-->
+</head>
+<body>   
+    <%- include('navigation') %>
+        <!--below I have the book image and text and styles-->
+    <div style="margin-left:20%;padding:1px 16px;height:1000px;">
+        <div class="books_table">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Author's name</th>
+                    <th colspan="2">Action</th>
+                </tr>
+                <% books.forEach(function (book) { %>
+                <tr>
+                    <td><%= book.id %> </td>
+                    <td><%= book.name %> </td>
+                    <td><%= book.author_name %> </td>
+                    <td><a class="edit" href="/edit/<%= book.id %>">Edit</a></td>
+                    <td><a data-id="<%= book.id %>" class="delete">Delete</a></td>
+                </tr>
+                <% }) %>
+            </table>
+        </div>
+        </div>
+        <script src="/js/main.js"></script>
+    </body>
+</html>
