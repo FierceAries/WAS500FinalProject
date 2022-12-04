@@ -1,3 +1,4 @@
+// Here we are just calling the book by id
 const Books = require('../models/books')
 exports.get = (req, res) => {
     console.log(req, res)

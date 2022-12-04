@@ -1,3 +1,4 @@
+// here we are accessing the bookslist
 const Books = require('../models/books')
 exports.get = (req, res) => {
     console.log(req, res)
